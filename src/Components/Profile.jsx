@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProfileHead from "./ProfileHead";
 import ProfileBody from "./ProfileBody";
+import BtnLike from "./BtnLike";
 
 function Profile({userName, occupation, email, location, skills}) {
   const [liked, setLiked] = useState(false);
@@ -12,13 +13,7 @@ function Profile({userName, occupation, email, location, skills}) {
         <ProfileHead userName={userName} occupation={occupation} />
         <ProfileBody email={email} location={location} skills={skills} />
       </table>
-        <button
-              type="button"
-              aria-pressed={liked}
-              onClick={() => setLiked((previousLiked) => !previousLiked)}
-            >
-          {liked ? "Liked" : "Like"} profile
-        </button>
+        <BtnLike liked={liked} onToggle={setLiked}/>
     </article>
   );
 }
