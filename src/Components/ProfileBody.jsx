@@ -1,6 +1,6 @@
 function ProfileBody({email, location, skills}) {
     return (
-                <tbody>
+        <tbody>
           <tr>
             <th scope="row">Email</th>
             <td>
